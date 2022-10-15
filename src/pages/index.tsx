@@ -44,11 +44,11 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>frourio-todo-app</title>
+        <title>これはブログになる</title>
       </Head>
 
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        これは<a href="https://nextjs.org">Next.js!!!!!!</a>
       </h1>
 
       <p className={styles.description}>frourio-todo-app</p>
