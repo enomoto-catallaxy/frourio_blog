@@ -2,7 +2,6 @@ import React, { FC, ReactNode } from 'react'
 import styles from '~/styles/Layout.module.css'
 import { staticPath } from '~/utils/$path'
 import UserBanner from './UserBanner'
-import styled from 'styled-components'
 
 type LayoutProps = {
   children: ReactNode
