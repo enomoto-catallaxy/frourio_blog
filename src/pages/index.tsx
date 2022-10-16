@@ -7,6 +7,7 @@ import type { Task } from '$prisma/client'
 import type { FormEvent, ChangeEvent } from 'react'
 import Layout from '~/components/Layout'
 import type { NextPage } from 'next'
+import { Header } from '~/components/common/header'
 
 const Home: NextPage = () => {
   const { data: tasks, error, mutate } = useAspidaSWR(apiClient.tasks)
@@ -46,6 +47,8 @@ const Home: NextPage = () => {
       <Head>
         <title>これはブログになる</title>
       </Head>
+
+      <Header />
 
       <h1 className={styles.title}>
         これは<a href="https://nextjs.org">Next.js!!!!!!</a>

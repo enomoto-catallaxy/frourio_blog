@@ -27,7 +27,8 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off'
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/display-name': 'off'
   },
   overrides: [
     {
@@ -40,5 +41,9 @@ module.exports = {
         'react/prop-types': 'off'
       }
     }
+  ],
+  'react/function-component-definition': [
+    2,
+    { namedComponents: 'arrow-function' }
   ]
 }
