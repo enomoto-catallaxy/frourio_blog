@@ -34,6 +34,9 @@
   "dependencies": {
     "@aspida/axios": "^1.11.0",
     "@aspida/swr": "^1.11.0",
+    "@mantine/core": "^5.5.5",
+    "@mantine/hooks": "^5.5.5",
+    "@mantine/next": "^5.5.5",
     "@prisma/client": "^3.9.1",
     "axios": "^0.27.2",
     "class-transformer": "^0.5.1",
