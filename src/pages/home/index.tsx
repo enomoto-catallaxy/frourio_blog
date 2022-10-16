@@ -24,7 +24,7 @@ export default MyHomePage
 const Wrapper = styled.div`
   width: 100%;
 
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `
