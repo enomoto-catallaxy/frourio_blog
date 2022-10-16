@@ -8,6 +8,9 @@ import type { FormEvent, ChangeEvent } from 'react'
 import Layout from '~/components/Layout'
 import type { NextPage } from 'next'
 import { Header } from '~/components/common/header'
+import { useRouter } from 'next/router'
+import { pagesPath } from '~/utils/$path'
+import styled from 'styled-components'
 
 const Home: NextPage = () => {
   const { data: tasks, error, mutate } = useAspidaSWR(apiClient.tasks)
@@ -42,6 +45,12 @@ const Home: NextPage = () => {
   if (error) return <div>failed to load</div>
   if (!tasks) return <div>loading...</div>
 
+  const router = useRouter()
+
+  const hancleClick = () => {
+    router.push(pagesPath.home.$url())
+  }
+
   return (
     <Layout>
       <Head>
@@ -50,9 +59,9 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <h1 className={styles.title}>
-        これは<a href="https://nextjs.org">Next.js!!!!!!</a>
-      </h1>
+      <ToHome className={styles.title} onClick={hancleClick}>
+        HOMEはここをクリック
+      </ToHome>
 
       <p className={styles.description}>frourio-todo-app</p>
 
@@ -87,3 +96,10 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+const ToHome = styled.h1`
+  :hover {
+    color: blue;
+    cursor: pointer;
+  }
+`
