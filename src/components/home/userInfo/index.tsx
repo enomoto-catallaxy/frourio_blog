@@ -7,7 +7,6 @@ import { apiClient } from '~/utils/apiClient'
 export const UserInfo = memo(() => {
   const initialUser = useAspidaSWR(apiClient.users, {})
 
-  console.log(initialUser)
   return (
     <Wrapper>
       <Avatar color="cyan" radius="xl">
