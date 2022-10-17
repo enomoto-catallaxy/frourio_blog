@@ -12,3 +12,19 @@ model Task {
   label String
   done  Boolean @default(false)
 }
+
+model User {
+  user_id Int     @id @default(autoincrement())
+  first_name    String?
+  last_name    String?
+  email   String  @unique
+  isAdmin Boolean @default(false)
+}
+
+model Document {
+  id            Int      @id @default(autoincrement())
+  name          String
+  content_name  String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime
+}
