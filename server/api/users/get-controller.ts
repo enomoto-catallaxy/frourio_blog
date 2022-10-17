@@ -6,6 +6,7 @@ export const get = async (): Promise<GetInitialUserResponse> => {
     firstName: 'sasaki',
     lastName: 'hisato',
     email: 'hisato@majong.pro',
-    isAdmin: false
+    isAdmin: false,
+    introduction: '日本麻雀プロ連盟所属/別名魔王'
   }
 }

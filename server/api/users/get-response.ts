@@ -4,4 +4,5 @@ export class GetInitialUserResponse {
   lastName: string | null
   email: string
   isAdmin: boolean
+  introduction: string
 }

@@ -5,18 +5,19 @@ import styled from 'styled-components'
 import { apiClient } from '~/utils/apiClient'
 
 export const UserInfo = memo(() => {
-  const initialUser = useAspidaSWR(apiClient.users, {})
+  const initialUser = useAspidaSWR(apiClient.users, {}).data
 
+  // TODO postメソッドをつけて投稿できるようにする
   return (
     <Wrapper>
       <Avatar color="cyan" radius="xl">
         MK
       </Avatar>
       <UserInfoContent>
-        {(initialUser.data?.firstName, initialUser.data?.lastName)}
+        {(initialUser?.firstName, initialUser?.lastName)}
       </UserInfoContent>
-      <UserInfoContent>{initialUser.data?.email}</UserInfoContent>
-      <UserInfoContent>自己紹介</UserInfoContent>
+      <UserInfoContent>{initialUser?.email}</UserInfoContent>
+      <UserInfoContent>{initialUser?.introduction}</UserInfoContent>
       <UserInfoContent>投稿数</UserInfoContent>
     </Wrapper>
   )
