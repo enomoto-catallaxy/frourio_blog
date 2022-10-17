@@ -1,15 +1,22 @@
+import useAspidaSWR from '@aspida/swr'
 import { Avatar } from '@mantine/core'
 import { memo } from 'react'
 import styled from 'styled-components'
+import { apiClient } from '~/utils/apiClient'
 
 export const UserInfo = memo(() => {
+  const initialUser = useAspidaSWR(apiClient.users, {})
+
+  console.log(initialUser)
   return (
     <Wrapper>
       <Avatar color="cyan" radius="xl">
         MK
       </Avatar>
-      <UserInfoContent>ユーザー名</UserInfoContent>
-      <UserInfoContent>email</UserInfoContent>
+      <UserInfoContent>
+        {(initialUser.data?.firstName, initialUser.data?.lastName)}
+      </UserInfoContent>
+      <UserInfoContent>{initialUser.data?.email}</UserInfoContent>
       <UserInfoContent>自己紹介</UserInfoContent>
       <UserInfoContent>投稿数</UserInfoContent>
     </Wrapper>
